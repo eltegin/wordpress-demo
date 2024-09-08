@@ -5,7 +5,7 @@
 replicaCount: 3
 
 image:
-  repository: wordpress
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -45,7 +45,7 @@ service:
 
 ingress:
   enabled: true
-  className: "nginx"
+  className: "wordpress"
   annotations: 
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     ingress.kubernetes.io/ssl-redirect: "false"
