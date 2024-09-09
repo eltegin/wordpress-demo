@@ -8,7 +8,7 @@ image:
   repository: wordpress
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -56,6 +56,13 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
+          backend:
+            service:
+              name: wordpress  # Replace with the actual service name for WordPress
+              port:
+                number: 80
+  
+
   tls:
    - secretName: wordpress-demo-tls
      hosts:
