@@ -52,7 +52,7 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
-    - host: wordpress-demo.eltegin.com
+    - host: argo-wordpress.eltegin.com
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -64,9 +64,9 @@ ingress:
 
                 
   tls:
-   - secretName: wordpress-demo-tls
+   - secretName: argo-wordpress-tls
      hosts:
-       - wordpress-demo.eltegin.com
+       - argo-wordpress.eltegin.com
 
 resources: 
   # We usually recommend not to specify default resources and to leave this as a conscious
